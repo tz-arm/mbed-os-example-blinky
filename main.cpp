@@ -5,6 +5,7 @@
 
 #include "mbed.h"
 #include "stats_report.h"
+#include "./libstatic/test_print.h"
 
 DigitalOut led1(LED1);
 
@@ -20,6 +21,7 @@ int main()
     while (true) {
         // Blink LED and wait 0.5 seconds
         led1 = !led1;
+        test_print();
         wait_ms(SLEEP_TIME);
 
         if ((0 == count) || (PRINT_AFTER_N_LOOPS == count)) {
